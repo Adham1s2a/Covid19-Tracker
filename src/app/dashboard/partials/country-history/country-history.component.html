@@ -1,0 +1,17 @@
+
+<div class="d-flex justify-content-center align-content-center">
+    <ngx-charts-bar-vertical
+    (window:resize)="onResize($event)"
+    [results]="newCasesPerMonth"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [view]="view"
+    >
+    </ngx-charts-bar-vertical>
+</div>

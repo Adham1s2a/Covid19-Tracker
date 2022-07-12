@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="my-5">
+    <h1 class="text-center">Covid-19 Dashboard</h1>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3>Most affected countries</h3>
+        </div>
+        <div class="card-body">
+          <app-most-effected></app-most-effected>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="filteredCountries$ | async as countries">
+    <div [formGroup]="countryFormGroup">
+      <ng-select
+        formControlName="searchField"
+        [items]="countries"
+        placeholder="Enter to search "
+        [(ngModel)]="selectedCountry"
+      >
+        >
+      </ng-select>
+    </div>
+  </ng-container>
+
+  <div class="row my-3">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3>{{ selectedCountry }} Statistics</h3>
+        </div>
+        <div class="card-body">
+          <app-country-statistics
+            [selectedCountry]="selectedCountry"
+          ></app-country-statistics>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3>{{ selectedCountry }} History</h3>
+        </div>
+        <div class="card-body">
+          <app-country-history
+            [selectedCountry]="selectedCountry"
+          ></app-country-history>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+<div class="d-flex justify-content-center align-content-center">
+  <ngx-charts-pie-chart
+    (window:resize)="onResize($event)"
+    [results]="casesByCountry"
+    [gradient]="gradient"
+    [legend]="showLegend"
+    [labels]="showLabels"
+    [doughnut]="isDoughnut"
+    [view]="view"
+    [scheme]="colorScheme"
+  >
+  </ngx-charts-pie-chart>
+</div>
