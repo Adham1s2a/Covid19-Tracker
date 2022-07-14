@@ -27,7 +27,7 @@ export class CountryHistoryComponent implements OnChanges {
   constructor(private rapidService: RapidService) {}
 
   // options
-  view: [number, number] = [window.innerWidth / 1.35, 400];
+  view: [number, number] = [window.innerWidth / 1.5, 400];
   showXAxis = true;
   showYAxis = true;
   gradient = false;
@@ -44,7 +44,7 @@ export class CountryHistoryComponent implements OnChanges {
   };
 
   onResize(event: any) {
-    this.view = [event.target.innerWidth / 1.35, 400];
+    this.view = [event.target.innerWidth / 1.5, 400];
   }
 
   ngOnChanges(changes: SimpleChanges) {
